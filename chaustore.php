@@ -1,4 +1,4 @@
-<?php require_once 'conn.php' ?>
+
 
 
 <!DOCTYPE html>
@@ -14,14 +14,14 @@
 
 <body>
     <h1> Gestionnaire Chaustore</h1>
-    <form method="POST" action="chaustore_manage.php">
-        <input type="submit" name="brand" value="Brand">
-        <input type="submit" name="category" value="Category">
-        <input type="submit" name="color" value="Color">
-        <input type="submit" name="product" value="Product">
-        <input type="submit" name="size" value="Size">
-        <input type="submit" name="stock" value="Stock">
-    </form>
+    <a href="brand_manage.php"><input type="button" value="Brand" /></a>
+    <a href="category_manage.php"><input type="button" value="Category" /></a>
+    <a href="color_manage.php"><input type="button" value="Color" /></a>
+    <a href="product_manage.php"><input type="button" value="Product" /></a>
+    <a href="size_manage.php"><input type="button" value="Size" /></a>
+    <a href="stock_manage.php"><input type="button" value="Stock" /></a>      
+     
+  
 
 
 

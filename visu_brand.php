@@ -1,5 +1,5 @@
+<?php require_once 'conn.php' ?>
 <?php
-$conn = mysqli_connect ('localhost', 'willdev', 'Culcul1982!', 'simplon_chaustore');
 $sql = 'select * from brand;'; 
 
 $result = mysqli_query($conn, $sql);
