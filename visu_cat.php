@@ -1,6 +1,5 @@
-
 <?php
-$sql = 'select * from brand ORDER BY id;'; 
+$sql = 'select * from category ORDER BY id;'; 
 
 $result = mysqli_query($conn, $sql);
 

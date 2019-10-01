@@ -1,6 +1,6 @@
 
 <?php
-$sql = 'select * from brand ORDER BY id;'; 
+$sql = 'select * from color ORDER BY id;'; 
 
 $result = mysqli_query($conn, $sql);
 

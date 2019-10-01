@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style2.css">
-    <title>Chaustore BRAND Management</title>
+    <title>Category Chaustore Management</title>
 </head>
 
 <body>
-    <h1>Chaustore Brand Management</h1>
+    <h1>Category Chaustore Management</h1>
     <a href="chaustore.php"><input type="button" value="Accueil" /></a>
     <input type="button" onclick='window.location.reload(false)' value="Rafraichir"/>
 
@@ -24,67 +24,70 @@
         <input id="delete_btn" name="supprimer" type="button" value="Supprimer">
     </form>
 
-    <div id='visu'><?php require_once "visu_brand.php" ?></div>
+    <div id='visu'><?php require_once "visu_cat.php" ?></div>
     <!-- Visulation on all version modifiy !!  -->
  
-    <!-- Block to Add a brand -->
+    <!-- Block to Add a cat -->
     <div id='add'> 
 
         <?php
-        if (!empty($_POST["submit"]) && !empty($_POST["brand"])) {
-            $brandname = $_POST['brand'];
-            $req = "INSERT INTO brand (name) VALUES ('$brandname');";
+        if (!empty($_POST["submit"]) && !empty($_POST["catadd"])) {
+            $catname = $_POST['catadd'];
+            $req = "INSERT INTO category (name) VALUES ('$catname');";
             mysqli_query($conn, $req);
         } ?>
-        <form id="addForm" method="POST" action="brand_manage.php">
-            <label for="brandadd">Ajouter une marque </label>
-            <input type="text" id="brandadd" name="brand" value='' />
+        <form id="addForm" method="POST" action="cat_manage.php">
+            <label for="catadd">Ajouter une catégorie </label>
+            <input type="text" id="catadd" name="catadd" value='' />
             <input class="btn" type="submit" name="submit" value="Valider" />
             </p>
         </form>
-        <?php require "visu_brand.php" ?>
+        <?php require "visu_cat.php" ?>
     </div>
 
 
 
-<!-- Block to modify a brand -->
+
+
+
+<!-- Block to modify a cat -->
     <div id='mod'>
         <?php
         if (!empty($_POST["submit"]) && !empty($_POST["mod"])) {
-            $brandmod = $_POST['mod'];
-            $idbrand = $_POST['idbrand'];
-            $req = "UPDATE `brand` SET `name`=('$brandmod') WHERE  `id`=('$idbrand');";
+            $catmod = $_POST['mod'];
+            $idcat = $_POST['id'];
+            $req = "UPDATE `category` SET `name`=('$catmod') WHERE  `id`=('$idcat');";
             mysqli_query($conn, $req);
         } ?>
-        <form id="modForm" method="POST" action="brand_manage.php">
-            <label for="brandid">Entre l'ID de la marque à modifier</label>
-            <input type="text" id="brandid" placeholder="ID to modify" name="idbrand" value='' />
-            <label for="brandmod">Modifier le nom d'une Marque</label>
-            <input type="text" id="brandmod" placeholder="New Brand name" name="mod" value='' />
+        <form id="modForm" method="POST" action="cat_manage.php">
+            <label for="catid">Entre l'ID de la catégorie à modifier</label>
+            <input type="text" id="catid" placeholder="ID to modify" name="id" value='' />
+            <label for="catmod">Modifier le nom de la catégorie</label>
+            <input type="text" id="catmod" placeholder="New Brand name" name="mod" value='' />
             <input class="btn" type="submit" name="submit" value="Valider" />
             </p>
         </form>
-        <?php require "visu_brand.php" ?>
+        <?php require "visu_cat.php" ?>
     </div>
 
 
 
-<!-- Block to delete a brand -->
+<!-- Block to delete a cat -->
     <div id='delete'>
 
         <?php
         if (!empty($_POST["submit"]) && !empty($_POST["delete"])) {
-            $branddelete = $_POST['delete'];
-            $req = "DELETE FROM brand where id=('$branddelete');";
+            $catdelete = $_POST['delete'];
+            $req = "DELETE FROM category where id=('$catdelete');";
             mysqli_query($conn, $req);
         } ?>
-        <form id="deleteForm" method="POST" action="brand_manage.php">
-            <label for="branddelete">Entrez l'id du produit à supprimer</label>
+        <form id="deleteForm" method="POST" action="cat_manage.php">
+            <label for="branddelete">Entrez l'id de la catégorie à supprimer</label>
             <input type="text" id="branddelete" name="delete" value='' required />
-            <input class="btn" type="submit" name="submit" value="Valider" />
+            <input class="btn" type="submit" name="submit"  value="Valider" />
             </p>
         </form>
-        <?php require "visu_brand.php" ?>
+        <?php require "visu_cat.php" ?>
     </div>
 
     <script src="script.js"></script>
