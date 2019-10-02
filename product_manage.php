@@ -87,7 +87,7 @@
             <input class="btn" type="submit" name="submit"  value="Valider" />
             </p>
         </form>
-        <?php require_once "visu_product.php" ?>
+        <?php require "visu_product.php" ?>
     </div>
 
     <script src="script.js"></script>
